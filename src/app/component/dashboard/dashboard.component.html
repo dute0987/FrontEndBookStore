@@ -1,0 +1,33 @@
+<div fxLayout="column" fxFlex style="height: 100%;width: 100%;">
+    <mat-toolbar class="main">
+        <div fxFlex=20>
+            <img src="../../../assets/bookimage.png">
+            <span>Bookstore</span>
+        </div>
+        <div fxFlex=50 class="searchIconBox">
+            <a>
+                <mat-icon class="headerIcon">search</mat-icon>
+            </a>
+            <input type="text" placeholder="Search..." class="searchbox">
+        </div>
+
+        <a fxFlex=10 class="profile">
+            <mat-icon class="icon" style="display: block;">perm_identity</mat-icon>
+            <span> Profile</span>
+        </a>
+        <a fxFlex=10 class="cartIcon">
+            <mat-icon class="icon" style="display: block;">shopping_cart</mat-icon>
+            <span> Cart</span>
+        </a>
+
+    </mat-toolbar>
+
+    <div>
+        <router-outlet ></router-outlet>
+    </div>
+
+    <footer class="footer">
+        Copyright &copy; 2022 Bookstore Private Limited All Rights Reserved
+    </footer>
+
+</div>

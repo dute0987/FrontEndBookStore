@@ -1,0 +1,39 @@
+<div style="background-color: grey;">
+    <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" class="compo">
+        <div class="main" fxLayout="row">
+            <div fxHide.xs>
+                <mat-card class="card-option">
+                    <img src="../../../assets/newBookstoreimage.png">
+                    <h2 style="margin-left: 60px; font-weight :500;margin-bottom: 50px;">Online Book Shopping</h2>
+                </mat-card>
+            </div>
+            <div>
+                <mat-card class="card-potion-1">
+                    <div>
+                            <button class="button" style="margin-left:40px" routerLink="/login">LOGIN</button>
+                            <button class="button" style="margin-left:72px;" >SIGNUP</button>
+                    </div>
+                    <div style="padding-left: 45px; margin-top: 30px;">
+                        <span class="inputfield">Full Name</span>
+                            <input type="text"  [(ngModel)]="fullName" matInput >
+                    </div>
+                    <div style="padding-left: 45px; margin-top: 10px;">
+                        <span class="inputfield" >Email Id</span>
+                            <input type="text" [(ngModel)]="email" matInput >
+                    </div>
+                    <div style="padding-left: 45px; margin-top: 10px;">
+                        <span class="inputfield">Password</span>
+                        <input type="text" [(ngModel)]="password" matInput>
+                    </div>
+                    <div style="padding-left: 45px; margin-top: 10px;">
+                        <span class="inputfield">Mobile Number</span>
+                        <input type="text" [(ngModel)]="phone" matInput>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <button class="button-login" (click)=" onSubmit()" >Sign Up</button>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

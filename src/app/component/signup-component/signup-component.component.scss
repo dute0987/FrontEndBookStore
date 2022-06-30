@@ -1,0 +1,74 @@
+.inputfield{
+    display: block;
+}
+.facebook{
+    background-color: rgb(61, 61, 230);
+    width:110px;
+    color: white;
+    font-size: 15px;
+    height: 35px;
+    border-radius: 3px;
+}
+.google{
+    background-color: rgb(230, 225, 225);
+    width:110px;
+    margin-left: 40px;
+    font-size: 15px;
+    height: 35px;
+    border-radius: 3px;
+}
+.card-option{
+    margin-top: 40px;
+    width: 380px;
+    height: 350px;
+    border:2px solid seashell;
+    border-radius: 20px;
+}
+img{
+    margin-left: 30px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    height: 250px;
+    width: 250px;
+    border-radius:100%;
+}
+.compo{
+    padding: 30px;
+    margin-top: 120px;
+}
+.card-potion-1{
+    width: 350px;
+    height: 420px;
+    margin-left: -90px;
+    border:2px solid seashell;
+    border-radius: 7px ;
+    margin-bottom: 50px;
+}
+.button{
+    font-size: 25px;
+    border: none;
+    margin-top: 15px;
+    background: none;
+    cursor: pointer;
+}
+.button-login{
+    width: 267px;
+    height: 40px;
+    margin-top: 29px;
+     color: white;
+     border-radius: 3px;
+    font-size: 20px;
+     background-color: rgb(145, 24, 24);
+     margin-left: 45px;
+     cursor: pointer;
+}
+input{
+    width: 260px;height: 30px;margin-top: -4px;
+    border-radius: 3px;
+}
+.all-butt{
+    display: flex;
+    direction: row;
+    height: 30px;
+    margin-left: 47px;
+}
