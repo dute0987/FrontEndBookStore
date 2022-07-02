@@ -1,0 +1,44 @@
+<div style="width: 100%; padding-left: 50px;margin-bottom: 80px; " fxFlex="100" fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+            <span class="mybook">Books <p id="book-count">({{bookarray?.length}} items)</p></span>
+        </div>
+        <div class="sorting">
+            <mat-form-field appearance="outline">
+                <mat-label>Sort by relevance</mat-label>
+                <mat-select class="relevance">
+                    <mat-option (click)="lowtohigh()" value="one">Price:Low to High</mat-option>
+                    <mat-option (click)=" hightolow()" value="two">Price:High to Low</mat-option>
+                    <mat-option (click)="newcoming()" value="third">Newest Arrivals</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="27px" fxLayout="row wrap" fxFlex>
+        <div *ngFor="let Book of bookarray">
+            <mat-card style="margin-bottom: 40px;margin-left: 10px;">
+                <div class="container">
+                    <div class="bookimg" fxLayout="row " fxLayoutAlign="center center">
+                        <img class="classimg" src="{{Book.bookImage}}" (click)="quickview(Book)">
+                    </div>
+                    <div>
+                        <h2 class="name">{{Book.bookName}}</h2>
+                        <p id="para">by {{Book.authorName}}</p>
+                        <div class="rating" fxLayoutAlign="space-between center">
+                            ({{Book.rating}})<img class="Star" src="./../../../assets/Star-image.png">
+                            <p id="count">({{Book.totalView}})</p>
+                        </div>
+                        <div fxLayout="row">
+                            <div class="dicount">
+                                Rs.{{Book.discountPrice}}
+                            </div>
+                            <div class="actual">
+                                Rs.{{Book.originalPrice}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

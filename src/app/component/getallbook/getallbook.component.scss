@@ -1,0 +1,143 @@
+#book-count {
+    margin-top: -22px;
+    margin-left: 85px;
+    font-size: medium;
+    color: gainsboro;
+}
+.sorting{
+    margin-right: 85px;
+}
+
+.mybook {
+    font-size: 25px;
+    margin-left: 10px;
+    
+}
+.sort {
+    margin-top: -67px;
+    margin-left: 63%;
+}
+.count {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 15px;
+    opacity: 0.6;
+}
+.relevance {
+    height: 5px;
+}
+.entirebook {
+    border: 1px solid gainsboro;
+    width: 250px;
+    height: 360px;
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.bookimg {
+    width: 220px;
+    height: 210px;
+    background-color: gainsboro;
+   
+   
+}
+.container{
+    width: 220px;
+}
+
+.classimg {
+    width: 150px;
+    height: 175px;
+    cursor: pointer;
+}
+
+.name {
+    font-size: larger;
+    margin-left: 13px;
+}
+
+#para {
+    margin-top: -24px;
+    font-size: small;
+    color: gray;
+    margin-left: 14px;
+}
+
+.rating {
+    font-size: 12px;
+    margin-top: -6px;
+    margin-left: 15px;
+    background: green;
+    color: white;
+    height: 15px;
+    width: 40px;
+    padding: 2px;
+}
+
+.Star {
+    height: 11px;
+    width: 11px;
+    font-size: 10px;
+    
+    margin-left: 2px;
+    background-color: green;
+}
+
+#del {
+    color: gray;
+}
+
+#count {
+   margin-top: 10px;
+    margin-left: 25%;
+    font-size: small;
+    color: rgb(138, 132, 132);
+}
+
+.dicount{
+    margin-top: 5px;
+    margin-left: 13px;
+    font-size: larger;
+    color:black;
+    font-weight: bolder;
+}
+
+ngdeep::mat-card{
+    width: 300px;
+}  
+.actual {
+    margin-top: 5px;
+    margin-left: 5px;
+    text-decoration: line-through;
+    color: gray;
+}
+
+.add-btn {
+    background-color: brown;
+    color: white;
+    border: aliceblue;
+    padding: 5px;
+    margin-left: 5%;
+    width: 40%;
+    cursor: pointer;
+}
+.btn2 {
+    background-color: black;
+    color: white;
+    border: aliceblue;
+    padding: 1px;
+    margin-left: 6%;
+    width: 45%;
+    cursor: pointer;
+}
+
+
+#fav-icons{
+    color: white;
+    font-size: 122%;
+}
+
+.booktitle {
+    width: 55%;
+
+}

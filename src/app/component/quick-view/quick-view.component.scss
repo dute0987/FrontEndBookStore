@@ -1,0 +1,126 @@
+.small{
+    width: 50px;
+    height: 60px;
+}
+.smallimg{
+    width: 60px;
+    height: 70px;
+    border: 2px solid brown;
+}
+.bigimg
+{
+    width: 360px;
+    height: 430px;
+    border: 2px solid rgb(223, 214, 214);
+}
+.big{
+    width: 280px;
+    height: 380px;
+}
+.main{
+    width: 100%; padding-left: 100px;padding-right:210px;margin-bottom: 200px;
+}
+.checked {
+    color: orange;
+  }
+.addbag{
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    background-color: brown;
+    color: aliceblue;
+    font-size: 15px;
+    border-radius: 3px;
+}
+.wish{
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    background-color: black;
+    color: aliceblue;
+    font-size: 15px;
+    border-radius: 3px;
+    
+}
+.fav{
+    
+    color: aliceblue;
+    margin-right:5px 
+}
+.title {
+    font-size: 30px;
+    margin-left: 13px;
+}
+.num{
+    width: 60px;
+    height: 20px;
+    
+    text-align: center;
+    
+    outline:none;
+}
+
+.auther {
+   
+    font-size: 15px;
+    color: gray;
+    margin-left: 14px;
+}
+.rating {
+    font-size: 12px;
+    
+    margin-left: 15px;
+    background: green;
+    color: white;
+    height: 15px;
+    width: 50px;
+}
+#count {
+   
+    margin-top: 10px;
+    font-size: small;
+    color: rgb(138, 132, 132);
+}
+.Star {
+    height: 11px;
+    width: 11px;
+    font-size: 10px;
+    
+    
+    margin-left: 2px;
+    background-color: aliceblue;
+}
+.discount{
+    font-size: 32px;
+    margin-left: 13px;
+    font-weight: bolder;
+  
+}
+
+.actual{
+    font-size: 20px;
+    margin-left: 4px;
+    text-decoration: line-through;
+    color: gray;
+}
+.price-container{
+    margin-top: 25px;
+}
+.signimg{
+    width: 30px;
+    height: 30px;
+    margin-top: -32px;
+
+}
+.sign{
+    border: none;
+    background-color: white;
+    height: 10px;   
+    font-size: 20px;
+}
+.matt{
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    background: none;
+}

@@ -1,0 +1,71 @@
+<div class="main" fxLayout="column">
+    <div fxLayout="column">
+        <div style="margin-top: 10px;">
+            <span style="color: gainsboro; cursor: pointer;"
+                routerLink="/dashboard/getallbook">Home/</span><span>Book({{BookId}})</span>
+        </div>
+        <div style="margin-top: 50px;" fxLayout="row ">
+            <div fxLayout="row ">
+                <div class="smallimg" fxLayout="row " fxLayoutAlign="center center">
+                    <img class="small" [src]="bookarray.bookImage">
+                </div>
+                <div>
+                    <div class="bigimg" fxLayout="row " fxLayoutAlign="center center">
+                        <img class="big" [src]="bookarray.bookImage">
+                    </div>
+                    <div fxLayout="row " fxLayoutAlign="space-between" style="margin-top: 30px;">
+                        <button class="addbag" fxLayout="row " fxLayoutAlign="center center" *ngIf="!show"
+                            (click)=" hideAndShow()">ADD TO BAG</button>
+                        <mat-card class="matt" fxLayout="row" fxLayoutAlign="center center" *ngIf="show">
+                            <button class="sign"><img class="signimg" src="./../../../assets/minussign.png"></button>
+                            <input class="num">
+                            <button class="sign"><img class="signimg" src="./../../../assets/plussign.png"></button>
+                        </mat-card>
+                        <button class="wish" fxLayout="row " fxLayoutAlign="center center">
+                            <mat-icon class="fav">favorite</mat-icon>WISHLIST
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-left: 30px; ">
+                <div fxLayout="column">
+                    <div fxLayout="column">
+                        <div>
+                            <h2 class="title">{{bookarray.bookName}}</h2>
+                        </div>
+                        <div>
+                            <p class="auther">by {{bookarray.authorName}}</p>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign=" center">
+                            <div class="rating" fxLayout="row" fxLayoutAlign="center center">{{bookarray.rating}}
+                                <img class="Star" src="./../../../assets/Star-image.png">
+                            </div>
+                            <div>
+                                <p id="count">({{bookarray.totalView}})</p>
+                            </div>
+                        </div>
+                        <div class="price-container" fxLayout="row" fxLayoutGap="20px">
+                            <div class="discount">
+                                Rs.{{bookarray.discountPrice}}
+                            </div>
+                            <div class="actual">
+                                Rs.{{bookarray.originalPrice}}
+                            </div>
+                        </div>
+                    </div>
+                    <hr style=" width: 100%; margin-top: 30px;">
+                    <div style="margin-top: 30px;width:500px;">
+                        <li style="font-size: 18px;color: rgb(220, 211, 211);">Book Detail</li>
+                        <ul style="margin-left: -15px; word-spacing:5px;font-size: 14px;">{{bookarray.bookDetails}}</ul>
+                    </div>
+                    <hr style=" width: 100%; margin-top: 30px;">
+                    <span style="font-size: 20px;">Customer Feedback</span>
+                    <mat-card
+                        style="margin-top: 30px;padding:20px;margin-top: 20px; background-color:rgb(248, 244, 244);height: auto;border-radius: 5px;">
+                        <span>Overall rating</span>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

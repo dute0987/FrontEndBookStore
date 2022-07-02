@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,10 +19,12 @@ import { SignupComponentComponent } from './component/signup-component/signup-co
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { GetallbookComponent } from './component/getallbook/getallbook.component';
+import { QuickViewComponent } from './component/quick-view/quick-view.component';
 
 @NgModule({
   declarations: [
-    AppComponent,LoginComponentComponent,SignupComponentComponent, ForgotPasswordComponent, ResetPasswordComponent, DashboardComponent
+    AppComponent,LoginComponentComponent,SignupComponentComponent, ForgotPasswordComponent, ResetPasswordComponent, DashboardComponent, GetallbookComponent, QuickViewComponent
     
   ],
   imports: [
@@ -37,7 +40,8 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule
     
   ],
   providers: [],
