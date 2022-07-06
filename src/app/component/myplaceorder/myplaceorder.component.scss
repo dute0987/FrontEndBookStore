@@ -1,0 +1,40 @@
+.orderimg{
+    width: 272px;
+    height: 211px;
+    margin-top: 90px;
+    margin-left: 500px;
+}
+   
+p{
+    text-align: center;
+    font: normal normal normal 18px/22px Lato;
+    color: black;
+
+}
+
+.User-table{
+    width:70%;
+     margin-left: 210px;
+}
+
+table,tr, td {
+    border: 1px solid lightgray;
+}
+
+th{
+    background-color: whitesmoke;
+}
+
+.continuebutton{
+    background-color: rgb(52, 52, 203);
+    color: white;
+    border: none;
+    margin-top: 40px;
+    margin-left: 500px;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 3px;
+}

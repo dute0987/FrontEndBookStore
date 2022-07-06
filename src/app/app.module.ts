@@ -10,6 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,10 +22,18 @@ import { ResetPasswordComponent } from './component/reset-password/reset-passwor
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { GetallbookComponent } from './component/getallbook/getallbook.component';
 import { QuickViewComponent } from './component/quick-view/quick-view.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { MyCartComponent } from './component/my-cart/my-cart.component';
+import { MyWishlistComponent } from './component/my-wishlist/my-wishlist.component';
+import { MyallorderComponent } from './component/myallorder/myallorder.component';
+import { MyplaceorderComponent } from './component/myplaceorder/myplaceorder.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 @NgModule({
   declarations: [
-    AppComponent,LoginComponentComponent,SignupComponentComponent, ForgotPasswordComponent, ResetPasswordComponent, DashboardComponent, GetallbookComponent, QuickViewComponent
+    AppComponent,LoginComponentComponent,SignupComponentComponent, ForgotPasswordComponent, ResetPasswordComponent, DashboardComponent, GetallbookComponent, QuickViewComponent, MyCartComponent, MyWishlistComponent, MyallorderComponent, MyplaceorderComponent
     
   ],
   imports: [
@@ -41,7 +50,11 @@ import { QuickViewComponent } from './component/quick-view/quick-view.component'
     MatToolbarModule,
     MatIconModule,
     MatSnackBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule,
+    NgbModule,MatExpansionModule,
+    MatRadioModule
+    
     
   ],
   providers: [],

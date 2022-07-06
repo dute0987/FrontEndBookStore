@@ -30,8 +30,8 @@
 }
 .profile .mat-icon {margin-right: 10px;}
 .footer {
-    position: fixed;
-    bottom: 0%;
+     position: fixed;
+     bottom: 0%;
     background-color: #4e3133;
     color: #fff;
     width: 100%;
@@ -48,5 +48,28 @@
 }
 .cartIcon .mat-icon, .profile .mat-icon {
     margin-left: auto;
+    padding-top: 10px;
+    //line-height: 0px;
+}
+.toolBut{
+   background-color: #A03037;
+   border: none;
+   cursor: pointer;
+}
+.wishlistIcon{
+    padding-left: 20px;
+    padding-right: 10px;
+    margin-left: -25px;
+}
+.wishlistbutton{
+    padding-left: -40px;
+}
+.log{
+    width: 120px;color: #A03037;border:1px solid #A03037; height:35px;margin-top: 10px;margin-left: 12px; 
+}
+.icon{
+    color: aliceblue;
+    width: 50px;
+    margin-bottom: 5px;
     padding-top: 10px;
 }

@@ -10,20 +10,41 @@
             </a>
             <input type="text" placeholder="Search" class="searchbox">
         </div>
+        <button class="toolBut" fxLayout="column" mat-button [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with heart icon">
+            <a fxFlex=10 class="profile">
+                <mat-icon class="icon" style="display: block;margin-bottom: 5px;">perm_identity</mat-icon>
+                <span > Profile</span>
+                <mat-menu class="matmenu" #menu="matMenu">
+                    <div style="width: 200px;padding:20px">
+                        <div>
+                            <h3 style="margin-left: 12px;">Hello Dear User</h3>
+                        </div>
+                        
+                        <button class="wishlistbutton" mat-menu-item fxLayoutAlign.sm="end center" routerLink="/dashboard/allorder">
+                            <mat-icon class="wishlistIcon">local_mall</mat-icon> My Orders
+                        </button>
 
-        <a fxFlex=10 class="profile">
-            <mat-icon class="icon" style="display: block;">perm_identity</mat-icon>
-            <span> Profile</span>
-        </a>
+                        <button class="wishlistbutton" mat-menu-item fxLayoutAlign.sm="end center" routerLink="/dashboard/wishlist">
+                            <mat-icon class="wishlistIcon">favorite</mat-icon> My Wishlist
+                        </button>
+
+                        <div style="width: 100px;height:30px">
+                            <button class="log"  (click)="Logout()">Logout</button>
+                        </div>
+                    </div>
+                </mat-menu>
+            </a>
+        </button>
         <a fxFlex=10 class="cartIcon">
-            <mat-icon class="icon" style="display: block;">shopping_cart</mat-icon>
+            <mat-icon class="icon" style="display: block;cursor: pointer;" routerLink="./cart">shopping_cart</mat-icon>
             <span> Cart</span>
         </a>
 
     </mat-toolbar>
 
     <div>
-        <router-outlet ></router-outlet>
+        <router-outlet></router-outlet>
     </div>
 
     <footer class="footer">

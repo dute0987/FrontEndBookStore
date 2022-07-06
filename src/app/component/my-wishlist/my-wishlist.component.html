@@ -1,0 +1,34 @@
+<div style="margin-left: 200px;margin-top: 10px;">
+    <div>
+        <span routerLink="/dashboard/getallbook" style="cursor:pointer;color:gainsboro;">Home</span>
+        <span>/ My WishList</span>
+    </div>
+    <mat-card style="width: 700px;margin-top: 10px;margin-bottom: 40px;" fxLayout="column">
+        <div>
+            <div
+                style="background-color:#F5F5F5;margin-bottom: 40px; height:50px;width:699px;border: 1px solid gray;margin-left:-16px;margin-top: -16px;">
+                <span style="margin-left: 35px;margin-top: 10px;font-weight: bold;position:absolute;margin-top: 12px;">
+                    My WishList ({{wishArray?.length}})
+                </span>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between" *ngFor="let wish of wishArray" style="padding-bottom:30px;margin-left: 20px;">
+                <div fxLayout="row">
+                    <div>
+                        <img style="width: 79px;cursor: pointer;" src="{{wish.bookmodel.bookImage}}" routerLink="/dashboard/quickview">
+                    </div>
+                    <div fxLayout="column" style="margin-left:30px ;">
+                        <div style="font-size: 20px;margin-bottom: 10px;">{{wish.bookmodel.bookName}}</div>
+                        <div style="color: gray;margin-left: 5px;margin-bottom: 10px;"> by {{wish.bookmodel.authorName}}</div>
+                        <div fxLayout="row">
+                            <div style="font-size: 18px;color:black;font-weight: bolder;margin-left: 5px;">Rs.{{wish.bookmodel.discountPrice}}</div>
+                            <div style="margin-left: 15px; text-decoration: line-through;color: gray;font-size: 12px;margin-left: 9px;">Rs.{{wish.bookmodel.originalPrice}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-right:20px ;">
+                    <mat-icon (click)="removewishlist(wish.wishlistId)">delete</mat-icon>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

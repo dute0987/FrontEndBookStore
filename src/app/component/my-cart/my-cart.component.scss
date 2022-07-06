@@ -1,0 +1,69 @@
+.remove{
+    border: none;background-color:white;margin-left: 10px;cursor: pointer;
+}
+.wrapper{
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+   margin-left: -4px;
+   margin-top: 13px;
+}
+.plusminus{
+    border: none;
+    background-color: white;
+    height: 10px;
+    margin-top: -5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.img5{
+    width: 20px;
+    height: 20px;
+    margin-top: -29px;
+
+}
+.num{
+    width: 60px;
+    height: 20px;
+   
+    text-align: center;
+    
+    outline:none;
+}
+.place{
+    background-color:#3371B5;color: white;
+    border-radius: 3px;
+    width: 126px;
+    height: 37px;
+    margin-bottom: 9px;
+}
+.addre{
+    width: 430px;
+    height: 60px;
+    border-radius: 3px;
+    background-color: rgb(246, 242, 242);
+}
+.full, .phone, .city, .state{
+    width: 200px;
+    border-radius: 3px;
+    height: 40px;
+    background-color: rgb(246, 242, 242);
+}
+.mat-label{
+    font-weight: 300px;
+    font-weight: bold;
+}
+.cbutton{
+    margin-top: 100px;
+    background-color:#3371B5;color: white;
+    border-radius: 3px;
+    width: 126px;
+    height: 37px;
+}
+.dbutton{
+    margin-left: 530px;
+    background-color:#3371B5;color: white;
+    border-radius: 3px;
+    width: 126px;
+    height: 37px;
+}

@@ -18,7 +18,7 @@
     height: 380px;
 }
 .main{
-    width: 100%; padding-left: 100px;padding-right:210px;margin-bottom: 200px;
+    width: 100%; padding-left: 140px;padding-right:210px;margin-bottom: 200px;
 }
 .checked {
     color: orange;
@@ -31,6 +31,7 @@
     color: aliceblue;
     font-size: 15px;
     border-radius: 3px;
+    cursor: pointer;
 }
 .wish{
     width: 160px;
@@ -40,6 +41,7 @@
     color: aliceblue;
     font-size: 15px;
     border-radius: 3px;
+    cursor: pointer;
     
 }
 .fav{
@@ -123,4 +125,53 @@
     height: 40px;
     line-height: 40px;
     background: none;
+}
+.rate{
+    width: 110px;
+}
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    margin-bottom: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 22px;
+    color: #ccc;
+}
+.rate:not(:checked)>label::after {
+    content: '★ ';
+    font-size: 28px;
+    animation-direction: alternate;
+}
+.rate>input:checked~label {
+    color: #ffc700;
+}
+.rate:not(:checked)>input {
+    display: none;
+}
+
+.user-comment{
+ font-size: 16px;
+ margin-top:15px ;
+}
+.user-feedback{
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.user-rating{
+    font-size: 16px;
+    margin-top: 15px;
+}
+.feedback-box {
+    // margin: 5px;
+    border: 1px solid;
+    background-color: #ccc;
+}
+.ngbRating{
+    color: #ffc700;
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

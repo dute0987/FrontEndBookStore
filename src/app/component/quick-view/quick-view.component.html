@@ -4,7 +4,7 @@
             <span style="color: gainsboro; cursor: pointer;"
                 routerLink="/dashboard/getallbook">Home/</span><span>Book({{BookId}})</span>
         </div>
-        <div style="margin-top: 50px;" fxLayout="row ">
+        <div style="margin-top: 30px;" fxLayout="row ">
             <div fxLayout="row ">
                 <div class="smallimg" fxLayout="row " fxLayoutAlign="center center">
                     <img class="small" [src]="bookarray.bookImage">
@@ -18,10 +18,11 @@
                             (click)=" hideAndShow()">ADD TO BAG</button>
                         <mat-card class="matt" fxLayout="row" fxLayoutAlign="center center" *ngIf="show">
                             <button class="sign"><img class="signimg" src="./../../../assets/minussign.png"></button>
-                            <input class="num">
-                            <button class="sign"><img class="signimg" src="./../../../assets/plussign.png"></button>
+                            <input class="num" [(ngModel)]="bookQuantity">
+                            <button class="sign"><img class="signimg" src="./../../../assets/plussign.png"
+                                    (click)="addToBag()"></button>
                         </mat-card>
-                        <button class="wish" fxLayout="row " fxLayoutAlign="center center">
+                        <button class="wish" fxLayout="row " fxLayoutAlign="center center" (click)="addToWishList()">
                             <mat-icon class="fav">favorite</mat-icon>WISHLIST
                         </button>
                     </div>
@@ -63,6 +64,40 @@
                     <mat-card
                         style="margin-top: 30px;padding:20px;margin-top: 20px; background-color:rgb(248, 244, 244);height: auto;border-radius: 5px;">
                         <span>Overall rating</span>
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" [(ngModel)]="rating" value="5" />
+                            <label for="star5" title="Extremely Good"></label>
+                            <input type="radio" id="star4" name="rate" [(ngModel)]="rating" value="4" />
+                            <label for="star4" title="Very Good"></label>
+                            <input type="radio" id="star3" name="rate" [(ngModel)]="rating" value="3" />
+                            <label for="star3" title="Good"></label>
+                            <input type="radio" id="star2" name="rate" [(ngModel)]="rating" value="2" />
+                            <label for="star2" title="Not Bad"></label>
+                            <input type="radio" id="star1" name="rate" [(ngModel)]="rating" value="1" />
+                            <label for="star1" title="Bad"></label>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <input style="width:100%;height:40px;border-radius: 5px;" placeholder="Enter you view"
+                                [(ngModel)]="comment">
+                        </div>
+                        <div fxLayoutAlign="end center">
+                            <button (click)="addFeedback()"
+                                style="width:80px;border-radius: 5px;height: 30px;background-color: rgb(105, 105, 201);">Submit</button>
+                        </div>
+                    </mat-card>
+                    <mat-card style="margin-top: 40px; border: none;background-color: white;" fxLayout="column">
+                        <div fxLayoutGap="20px" *ngFor="let feedback of booksArr" style="margin-left: 0px;">
+                            <div class="user">
+                                <span class="user-feedback">{{(feedback?.fullName)}}</span>
+                            </div>
+                            <div>
+                                <ngb-rating class="ngbRating" [max]="5" [(rate)]="feedback.rating" [readonly]="true">
+                                </ngb-rating>
+                            </div>
+                            <div>
+                                <span class="user-comment">{{feedback?.comment}}</span>
+                            </div>
+                        </div>
                     </mat-card>
                 </div>
             </div>

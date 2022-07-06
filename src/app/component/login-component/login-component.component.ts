@@ -15,17 +15,16 @@ export class LoginComponentComponent implements OnInit {
   token:any;
   email:any;
   password:any;
-  constructor(private user: UserserviceService,private rout: Router,private snackBar:MatSnackBar) { }
+  constructor(private myuser: UserserviceService,private rout: Router,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
   }
-  onSubmit() {
-    
+  onSubmit() { 
     let reqdata={
       email:this.email,
       password:this.password,
     }
-    this.user.login(reqdata).subscribe((response:any)=>{
+    this.myuser.login(reqdata).subscribe((response:any)=>{
       console.log(response);
       localStorage.setItem("token",response.data.token);
       this.rout.navigateByUrl('/dashboard/getallbook');
@@ -33,6 +32,5 @@ export class LoginComponentComponent implements OnInit {
         duration: 3000,
       });
     })
-
 }
 }

@@ -1,0 +1,190 @@
+<div style="margin-left:200px;padding-bottom: 40px;">
+    <div style="margin-top: 10px;">
+        <span style="color:gainsboro;cursor: pointer;" routerLink="/dashboard/getallbook">Home</span>
+        <span>/ My Cart ({{cartArray?.length}})</span>
+    </div>
+    <div>
+        <mat-card style="max-width:700px;margin-top:15px;display: block;margin-bottom: 40px;margin-left: 0px;">
+            <div fxLayoutAlign="space-between">
+                <h3 style="margin-left: 18px;font-weight: bold;">My Cart </h3>
+                <mat-card style="height: -1px;align-items: center;margin-bottom: 20px;">Bridgelabz solution pvt ltd
+                </mat-card>
+            </div>
+            <div style="display: flex; direction: row;margin-left: 20px;padding-bottom: 30px;"
+                *ngFor="let cart of cartArray">
+                <div>
+                    <div>
+                        <img style="height: 110px; width: 90px" src="{{cart.bookmodel.bookImage}}" />
+                    </div>
+                </div>
+                <div style="margin-left: 30px;">
+                    <div fxLayout="column">
+                        <div style="font-size: 20px;margin-bottom: 10px;">{{cart.bookmodel.bookName}}</div>
+                        <div style="color: gray;margin-left: 5px;margin-bottom: 10px;">by {{cart.bookmodel.authorName}}
+                        </div>
+                        <div fxLayout="row" style="margin-bottom: 0px;">
+                            <div style="font-size: 18px;color:black;font-weight: bolder;margin-left: 5px;">
+                                Rs.{{cart.bookmodel.discountPrice * cart.bookQuantity}}</div>
+                            <div
+                                style="margin-left: 15px; text-decoration: line-through;color: gray;font-size: 12px;margin-left: 9px;">
+                                Rs.{{cart.bookmodel.originalPrice * cart.bookQuantity}}</div>
+                        </div>
+                        <div class="wrapper" fxLayout="row" fxLayoutAlign="start center">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <button class="plusminus">
+                                    <img class="img5" src="./../../../assets/minussign.png"
+                                        (click)="updateToLess(cart.cartId,cart.bookQuantity,cart.bookId)"></button>
+                                <input class="num">
+                                <button class="plusminus"><img class="img5" src="./../../../assets/plussign.png"
+                                        (click)="updateToAdd(cart.cartId,cart.bookQuantity,cart.bookId)"></button>
+                            </div>
+                            <div>
+                                <button class="remove" (click)="removecart(cart.cartId)">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div fxLayoutAlign="end">
+                <button class="place" *ngIf="!show" (click)="hideAndShow()">Place Order</button>
+            </div>
+        </mat-card>
+    </div>
+
+    <mat-expansion-panel [expanded]="true" hideToggle style="width: 700px;margin-bottom: 20px;">
+        <mat-expansion-panel-header *ngIf="!show" (click)="hideAndShow()">
+            <mat-panel-title>
+                Address Details
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div fxlayout="row" fxLayoutAlign="space-between start">
+            <div fxLayout="column" style="padding-top: 10px;" *ngIf="show">
+                <div fxLayout>
+                    <div>
+                        <span style="font-size: 20px;font-weight: 400px;">Customer Details</span>
+                    </div>
+                    <div>
+                        <button style="margin-left: 371px;position: absolute;border:1px solid #A03037;color:#A03037"
+                            *ngIf="!addshow" (click)="addshowhide()">Add New Address</button>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutGap="30px" style="padding-top:20px;">
+                    <div fxLayout="column">
+                        <mat-label class="names">Full Name</mat-label>
+                        <input type="text" class="full" matInput placeholder="Vishal Dute">
+                    </div>
+                    <div fxLayout="column">
+                        <mat-label>Phone Number</mat-label>
+                        <input type="number" class="phone" matInput placeholder="9123729277">
+                    </div>
+                </div>
+                <div *ngIf="addshow">
+                    <div fxLayout="row" style="padding-top: 20px;">
+                        <div fxLayout="column">
+                            <mat-label>Address</mat-label>
+                            <input class="addre" [(ngModel)]="address" >
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="30px" style="padding-top:20px;">
+                        <div fxLayout="column">
+                            <mat-label>City/Town</mat-label>
+                            <input [(ngModel)]="city" class="city">
+                        </div>
+                        <div fxLayout="column">
+                            <mat-label>State</mat-label>
+                            <input [(ngModel)]="state" class="state">
+                        </div>
+                    </div>
+                    <div fxLayout="column" fxLayoutGap="10px" style="margin-left: 10px;padding-top: 20px;">
+                        <span class="type">Type</span>
+                        <mat-radio-group [(ngModel)]="value" aria-label="Select an option" fxLayoutGap="30px">
+                            <mat-radio-button  class="home" value="1">home</mat-radio-button>
+                            <mat-radio-button  class="work" value="2">work</mat-radio-button>
+                            <mat-radio-button  class="other" value="3" >other</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div fxLayout="column" fxLayoutAlign="space-between center">
+                        <div>
+                            <button mat-flat-button class="dbutton"  (click)="Addaddress()">Submit Address</button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="!addshow" style="margin-top: 20px;margin-left: 0px" >
+                    <div *ngFor="let Address of AddressArray">
+                        <div *ngIf="Address.typeId > 2">
+                            <input type="radio" [(ngModel)]="AddressId" [id]="Address.addressId"
+                                value="{{Address.addressId}}" style="margin-top: 20px;">
+                            <span for="Address.typeId" style="font-size: 18px;">.Home </span>
+                        </div>
+                        <div *ngIf="Address.typeId===2">
+                            <input type="radio" [(ngModel)]="AddressId" [id]="Address.addressId"
+                                value="{{Address.addressId}}" style="margin-top: 20px;">
+                            <span for="Address.typeId" style="font-size: 18px;">.Work </span>
+                        </div>
+                        <div *ngIf="Address.typeId===1">
+                            <input type="radio" [(ngModel)]="AddressId" [id]="Address.addressId"
+                                value="{{Address.addressId}}" style="margin-top: 20px;">
+                            <span for="Address.typeId" style="font-size: 18px;">.other </span>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <div>
+                                <mat-label>Address</mat-label>
+                            </div>
+                            <input style="width: 351px;" [value]="Address.address">
+                        </div>
+                        <div style="display: flex; direction: row; margin-top: 10px;">
+                            <div>
+                                <div>
+                                    <mat-label>City/Town</mat-label>
+                                </div>
+                                <input [value]="Address.city">
+                            </div>
+                            <div style="margin-left: 5px;">
+                                <div>
+                                    <mat-label>State</mat-label>
+                                </div>
+                                <input  [value]="Address.state">
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayoutAlign="end"><button *ngIf="!order" (click)="ordershow()"
+                            style="height: 40px;font-size: 16px; width:200px;background-color: blue;color: white;">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true" hideToggle style="width: 700px;margin-bottom: 40px;padding-top: 10px;">
+        <mat-expansion-panel-header *ngIf="!order">
+            <mat-panel-title>
+                Order Summary
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngIf="order">
+            <div fxLayout="row" fxLayoutAlign="space-between" style="padding-bottom:30px;margin-left: 20px;" *ngFor="let cart of cartArray">
+                <div fxLayout="row">
+                    <div>
+                        <img style="width: 79px;"
+                            src="{{cart.bookmodel.bookImage}}">
+                    </div>
+                    <div fxLayout="column" style="margin-left:30px ;">
+                        <div style="font-size: 20px;margin-bottom: 10px;">{{cart.bookmodel.bookName}}</div>
+                        <div style="color: gray;margin-left: 5px;margin-bottom: 10px;"> by {{cart.bookmodel.authorName}}</div>
+                        <div fxLayout="row">
+                            <div style="font-size: 18px;color:black;font-weight: bolder;margin-left: 5px;">Rs.{{cart.bookmodel.discountPrice * cart.bookQuantity}}</div>
+                            <div
+                                style="margin-left: 15px; text-decoration: line-through;color: gray;font-size: 12px;margin-left: 9px;">
+                                Rs.{{cart.bookmodel.originalPrice * cart.bookQuantity}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="space-between center">
+                    <div>
+                        <button mat-flat-button class="cbutton" (click)="addToOrder(cart.bookId,cart.bookQuantity)">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</div>
