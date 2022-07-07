@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserserviceService } from 'src/app/service/userservice/userservice.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserserviceService } from 'src/app/service/userservice/userservice.serv
 export class ForgotPasswordComponent implements OnInit {
 
   Email:any;
-  constructor(private user: UserserviceService) { }
+  constructor(private user: UserserviceService,private snack:MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +22,9 @@ export class ForgotPasswordComponent implements OnInit {
     console.log(reqdata.Email)
     this.user.forgetPassword(reqdata).subscribe((response:any)=>{
       console.log(response);
+      this.snack.open('User Fetching Forgot Password Succesfully..!!!','..', {
+        duration: 3000,
+      });
     })
       
   }

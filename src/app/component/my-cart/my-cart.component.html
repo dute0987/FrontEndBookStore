@@ -110,11 +110,11 @@
                         </div>
                     </div>
                 </div>
-                <div *ngIf="!addshow" style="margin-top: 20px;margin-left: 0px" >
+                <div *ngIf="!addshow" style="margin-top: 30px;margin-left: 0px;padding-bottom: 30px;" >
                     <div *ngFor="let Address of AddressArray">
                         <div *ngIf="Address.typeId > 2">
                             <input type="radio" [(ngModel)]="AddressId" [id]="Address.addressId"
-                                value="{{Address.addressId}}" style="margin-top: 20px;">
+                                value="{{Address.addressId}}" style="margin-top: 20px;width: 389px;" class="ades">
                             <span for="Address.typeId" style="font-size: 18px;">.Home </span>
                         </div>
                         <div *ngIf="Address.typeId===2">
@@ -131,25 +131,28 @@
                             <div>
                                 <mat-label>Address</mat-label>
                             </div>
-                            <input style="width: 351px;" [value]="Address.address">
+                            <input style="width: 430px;height: 60px;background-color: rgb(246, 242, 242);border-radius: 3px;" [value]="Address.address">
                         </div>
-                        <div style="display: flex; direction: row; margin-top: 10px;">
+                        <div fxLayoutGap="30px" style="display: flex; direction: row; margin-top: 10px;width: 800px;">
                             <div>
                                 <div>
                                     <mat-label>City/Town</mat-label>
                                 </div>
-                                <input [value]="Address.city">
+                                <input [value]="Address.city" style="width: 200px;height: 40px;background-color: rgb(246, 242, 242);border-radius: 3px;">
                             </div>
                             <div style="margin-left: 5px;">
                                 <div>
                                     <mat-label>State</mat-label>
                                 </div>
-                                <input  [value]="Address.state">
+                                <input  [value]="Address.state" style="width:200px ;height: 40px;background-color: rgb(246, 242, 242);border-radius: 3px;">
                             </div>
                         </div>
                     </div>
                     <div fxLayoutAlign="end"><button *ngIf="!order" (click)="ordershow()"
-                            style="height: 40px;font-size: 16px; width:200px;background-color: blue;color: white;">Continue</button>
+                            style="background-color:#3371B5;color: white;
+                            border-radius: 3px;
+                            width: 126px;
+                            height: 37px;margin-right: 145px;margin-top: 25px;">Continue</button>
                     </div>
                 </div>
             </div>

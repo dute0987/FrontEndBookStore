@@ -1,6 +1,8 @@
 import { Component, OnInit, VERSION } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookserviceService } from 'src/app/service/bookservice/bookservice.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-quick-view',
@@ -20,7 +22,7 @@ export class QuickViewComponent implements OnInit {
   values=1;
   name = 'Angular ' + VERSION.major;
   
-  constructor( private bookservice: BookserviceService,private router: Router) { }
+  constructor( private bookservice: BookserviceService,private router: Router,private snack:MatSnackBar) { }
 
   ngOnInit(): void {
     this.BookId = localStorage.getItem('bookId');
@@ -36,6 +38,9 @@ export class QuickViewComponent implements OnInit {
       this.bookarray = response.response;
       this.getFeedback();
       console.log(this.bookarray);
+      this.snack.open('All Book get Succesfully..!!!','..', {
+        duration: 3000,
+      });
     });
   }
   hideAndShow(){
@@ -52,6 +57,9 @@ export class QuickViewComponent implements OnInit {
       (response: any) => {
         console.log('User Feedback', response);
         this.getFeedback();
+        this.snack.open('FeedBack Added Succesfully..!!!','..', {
+          duration: 3000,
+        });
       },
       (error: any) => {
         console.log(error);
@@ -69,6 +77,9 @@ export class QuickViewComponent implements OnInit {
       console.log('User Feedback', response);
       this.booksArr = response.response;
       console.log(this.booksArr);
+      this.snack.open('All FeedBack get Succesfully..!!!','..', {
+        duration: 3000,
+      });
      
     });
   }
@@ -86,7 +97,10 @@ export class QuickViewComponent implements OnInit {
     }
     this.bookservice.addToBag(reqdata).subscribe(
       (response: any) => {
-        console.log('Added to cart', response);   
+        console.log('Added to cart', response);
+        this.snack.open('Book Added to Cart Succesfully..!!!','..', {
+          duration: 3000,
+        });   
       },
       (error: any) => {
         console.log(error);
@@ -102,6 +116,9 @@ export class QuickViewComponent implements OnInit {
     this.bookservice.addwishlist(reqdata).subscribe(
       (response: any) => {
         console.log('Add to wishlist', response);
+        this.snack.open('Book Added to WishList Succesfully..!!!','..', {
+          duration: 3000,
+        });
         
       },
       (error: any) => {

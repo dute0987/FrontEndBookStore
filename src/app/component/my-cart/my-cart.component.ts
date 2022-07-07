@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookserviceService } from 'src/app/service/bookservice/bookservice.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-my-cart',
@@ -21,7 +22,7 @@ export class MyCartComponent implements OnInit {
   city:any;
   state:any
 
-  constructor(private bookService: BookserviceService, private router: Router) { }
+  constructor(private bookService: BookserviceService, private router: Router ,private snack:MatSnackBar) { }
 
   ngOnInit(): void {
     this.getAllcart();
@@ -46,6 +47,9 @@ export class MyCartComponent implements OnInit {
       console.log(response);
       this.cartArray = response.response;
       console.log(this.cartArray);
+      this.snack.open('All Cart get Succesfully..!!!','..', {
+        duration: 3000,
+      });
 
     });
   }
@@ -57,6 +61,9 @@ export class MyCartComponent implements OnInit {
     this.bookService.deletcart(reqdata).subscribe((response: any) => {
       console.log(response);
       this.getAllcart()
+      this.snack.open('Item removed Successfully..!!!','..', {
+        duration: 3000,
+      });
 
     });
   }
@@ -72,6 +79,9 @@ export class MyCartComponent implements OnInit {
         console.log(response);
         this.getAllcart()
       });
+      this.snack.open('Cart updated Successfully..!!!','..', {
+        duration: 3000,
+      });
     }
   }
 
@@ -84,7 +94,11 @@ export class MyCartComponent implements OnInit {
     this.bookService.updateToLess(cartId,data).subscribe((response: any) => {
       console.log(response);
      this.getAllcart()
-    });}
+    });
+    this.snack.open('Cart Updated Successfully..!!!','..', {
+      duration: 3000,
+    });
+  }
   }
 
   GetAddress(){
@@ -93,6 +107,9 @@ export class MyCartComponent implements OnInit {
       this.AddressArray = response.response;
       // this.TypeId = this.AddressArray[0].typeId;
       console.log(this.AddressArray);
+      this.snack.open('all address fetch Successfully..!!!','..', {
+        duration: 3000,
+      });
 
     });
   }
@@ -108,6 +125,9 @@ export class MyCartComponent implements OnInit {
     this.bookService.addAddress(data).subscribe(
       (response: any) => {
         console.log('Add to continues order', response);
+        this.snack.open('Address Added Successfully..!!!','..', {
+          duration: 3000,
+        });
         
       },
       (error: any) => {
@@ -126,12 +146,16 @@ export class MyCartComponent implements OnInit {
     this.bookService.addToOrder(data).subscribe(
       (response: any) => {
         console.log('Add to wishlist', response);
+        this.snack.open('order Added Successfully..!!!','..', {
+          duration: 3000,
+        });
         
       },
       (error: any) => {
         console.log(error);
       }
     );
+    this.router.navigateByUrl('/dashboard/placeorder');
   }
   
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserserviceService } from 'src/app/service/userservice/userservice.service';
 
@@ -12,7 +13,7 @@ export class SignupComponentComponent implements OnInit {
   password:any;
   fullName:any;
   phone:any;
-  constructor(private user: UserserviceService,private rout: Router) { }
+  constructor(private user: UserserviceService,private rout: Router,private snack:MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +28,9 @@ export class SignupComponentComponent implements OnInit {
     }
     this.user.signup(reqdata).subscribe((response:any)=>{
       console.log(response);
+      this.snack.open('User Signup Succesfully..!!!','..', {
+        duration: 3000,
+      });
      
     })
 

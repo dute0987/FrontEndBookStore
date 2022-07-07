@@ -193,5 +193,16 @@ export class BookserviceService {
     return this.httpService.postservices('Order/AddOrder', data,true, header);
   }
 
+  GetOrder(){
+    this.token = localStorage.getItem('token')
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json-patch+json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.getService('Order/GetAllOrder', true, header)
+  }
+
 }
 

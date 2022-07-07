@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { UserserviceService } from 'src/app/service/userservice/userservice.service';
 
@@ -11,7 +12,7 @@ export class ResetPasswordComponent implements OnInit {
   password:any;
   confirmPassword:any;
   token:any;
-  constructor(private user: UserserviceService, private activatedRoute: ActivatedRoute) { }
+  constructor(private user: UserserviceService, private activatedRoute: ActivatedRoute,private snack:MatSnackBar) { }
 
   ngOnInit(): void {
     this.token = this.activatedRoute.snapshot.paramMap.get('token')
@@ -24,6 +25,9 @@ export class ResetPasswordComponent implements OnInit {
     this.user.resetPassword(reqdata, this.token).subscribe(
       (response: any) => {
         console.log(response);
+        this.snack.open('Password reset Succesfully..!!!','..', {
+          duration: 3000,
+        });
         
       },
       (error) => {

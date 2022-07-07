@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private snack:MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -16,6 +17,9 @@ export class DashboardComponent implements OnInit {
   {
     localStorage.removeItem("token");
     this.router.navigateByUrl('/login');
+    this.snack.open('User LOgout  Succesfully..!!!','..', {
+      duration: 3000,
+    });
   }
 
 }
